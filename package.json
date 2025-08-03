@@ -6,7 +6,10 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "migrate:zodiac": "node scripts/bulk-update-zodiac.js",
+    "verify:zodiac": "node scripts/verify-zodiac-migration.js"
+
   },
   "repository": {
     "type": "git",

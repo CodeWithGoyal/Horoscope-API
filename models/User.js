@@ -25,10 +25,19 @@ const userSchema = new mongoose.Schema({
     birthdate: {
       type: Date,
       required: true
+    },
+    zodiacSign: {
+        type: String,
+        required: true,
+        enum: [
+          'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo',
+          'Libra', 'Scorpio', 'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'
+        ]
     }
-  }, {
+}, {
     timestamps: true
-  });
+});
+
   
   userSchema.pre('save', async function(next) {
     if (!this.isModified('password')) return next();
