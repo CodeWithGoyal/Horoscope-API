@@ -34,7 +34,7 @@ A comprehensive Node.js backend service that generates and serves personalized d
 
 ```bash
 git clone https://github.com/CodeWithGoyal/Horoscope-API
-cd personalized-horoscope-api
+cd Horoscope-API
 ```
 
 ### 2. Install Dependencies
