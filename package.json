@@ -9,6 +9,7 @@
     "test:coverage": "jest --coverage",
     "migrate:zodiac": "node scripts/bulk-update-zodiac.js",
     "verify:zodiac": "node scripts/verify-zodiac-migration.js"
+
   },
   "repository": {
     "type": "git",

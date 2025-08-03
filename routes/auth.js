@@ -5,6 +5,7 @@ const User = require('../models/User');
 const { signupSchema, loginSchema } = require('../validation/schemas');
 const { calculateZodiacSign } = require('../utils/ZodiacCalculator');
 
+
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
@@ -30,6 +31,7 @@ router.post('/signup', async (req, res) => {
     
       const birthDate = new Date(birthdate);
       const zodiacSign = calculateZodiacSign(birthDate);
+
       
       const user = new User({
         name,
