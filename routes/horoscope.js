@@ -5,6 +5,35 @@ const { generateHoroscope } = require('../utils/horoscopeGenerator');
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * /horoscope/today:
+ *   get:
+ *     summary: Get today's horoscope for authenticated user
+ *     tags: [Horoscope]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Today's horoscope
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 zodiacSign:
+ *                   type: string
+ *                 date:
+ *                   type: string
+ *                   format: date
+ *                 horoscope:
+ *                   type: string
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal server error
+ */
+
 router.get('/today', auth, async (req, res) => {
   try {
     const today = new Date();
@@ -42,6 +71,40 @@ router.get('/today', auth, async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+
+/**
+ * @swagger
+ * /horoscope/history:
+ *   get:
+ *     summary: Get last 7 days horoscope history for authenticated user
+ *     tags: [Horoscope]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Horoscope history for last 7 days
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 zodiacSign:
+ *                   type: string
+ *                 history:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       date:
+ *                         type: string
+ *                         format: date
+ *                       horoscope:
+ *                         type: string
+ *       401:
+ *         description: Unauthorized
+ *       500:
+ *         description: Internal server error
+ */
 
 router.get('/history', auth, async (req, res) => {
   try {

@@ -1,6 +1,40 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     User:
+ *       type: object
+ *       required:
+ *         - name
+ *         - email
+ *         - password
+ *         - birthdate
+ *       properties:
+ *         name:
+ *           type: string
+ *           description: User's full name
+ *         email:
+ *           type: string
+ *           format: email
+ *           description: User's email address
+ *         password:
+ *           type: string
+ *           description: User's password (hashed)
+ *         birthdate:
+ *           type: string
+ *           format: date
+ *           description: User's birthdate (YYYY-MM-DD)
+ *         zodiacSign:
+ *           type: string
+ *           description: Auto-calculated zodiac sign
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ */
+
 const userSchema = new mongoose.Schema({
     name: {
       type: String,

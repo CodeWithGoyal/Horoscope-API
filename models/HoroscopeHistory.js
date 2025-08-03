@@ -1,5 +1,30 @@
 const mongoose = require('mongoose');
 
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     HoroscopeHistory:
+ *       type: object
+ *       properties:
+ *         userId:
+ *           type: string
+ *           description: Reference to the user
+ *         zodiacSign:
+ *           type: string
+ *           description: User's zodiac sign
+ *         content:
+ *           type: string
+ *           description: Horoscope content
+ *         date:
+ *           type: string
+ *           format: date
+ *           description: Date of the horoscope
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ */
+
 const horoscopeHistorySchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
