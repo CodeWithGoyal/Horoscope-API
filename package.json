@@ -9,7 +9,6 @@
     "test:coverage": "jest --coverage",
     "migrate:zodiac": "node scripts/bulk-update-zodiac.js",
     "verify:zodiac": "node scripts/verify-zodiac-migration.js"
-
   },
   "repository": {
     "type": "git",
@@ -27,9 +26,12 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.17.0"
+    "mongoose": "^8.17.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "jest": "^30.0.5",

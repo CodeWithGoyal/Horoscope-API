@@ -64,6 +64,11 @@ const horoscopeTemplates = {
     ]
 };
 
+/**
+ * Generate a random horoscope for a given zodiac sign
+ * @param {string} zodiacSign - The zodiac sign
+ * @returns {string} - Generated horoscope
+*/
 
 function generateHoroscope(zodiacSign) {
     const templates = horoscopeTemplates[zodiacSign];
