@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
-const User = require('../models/User');
+const User = require('../models/user');
 const { signupSchema, loginSchema } = require('../validation/schemas');
 const { calculateZodiacSign } = require('../utils/ZodiacCalculator');
 

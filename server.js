@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 
 // Routes
 const authRoutes = require('./routes/auth');
+const horoscopeRoutes = require('./routes/horoscope');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,8 +26,14 @@ app.use((err, req, res, next) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.get('/', (req, res) => {
-    res.send('Hello World');
+app.use('/api/horoscope', horoscopeRoutes);
+app.get('/api/health', (req, res) => {
+    res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
 });
 
 // Start the server first
