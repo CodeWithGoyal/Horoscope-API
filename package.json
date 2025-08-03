@@ -1,0 +1,35 @@
+{
+  "name": "horoscope-api",
+  "version": "1.0.0",
+  "description": "\"Personalized Horoscope API\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeWithGoyal/Horoscope-API.git"
+  },
+  "author": "Himanshu Goyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeWithGoyal/Horoscope-API/issues"
+  },
+  "homepage": "https://github.com/CodeWithGoyal/Horoscope-API#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.0"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
+  }
+}
